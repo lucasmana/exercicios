@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        #btn{
+        width: 120px;
+        height: 70px; }
+
+    </style>
+</head>
+
+<body>
+    <h1>Média do Aluno</h1>
+    <p id="frase"></p>
+<button id="btn" onclick="clicar()" >Clique aqui para iniciar </button>
+</body>
+
+<script src="objeto.js"></script>
+<script>
+    function clicar(){
+
+        for(let i=1;i<=100;i++){
+            let texto ="";
+            texto+=i+"";
+            
+          let a = document.getElementById("frase");
+          a.innerHTML=texto
+
+        }
+    }
+
+    
+</script>
+    
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    #btn{
+        width: 120px;
+        height: 70px; }
+
+        .nome{
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        }
+
+        
+</style>
+<h1>Média do Aluno</h1>
+<button id="btn" onclick="média()" >Calcular média</button>
+
+<p class="nome"></p>
+<br>
+<p class="obtidas"></p>
+<br>
+<p class="final"></p>
+<br>
+<p class="result"></p>
+<script>
+    let nome; let nota1; let nota2; let result;
+    let name; let obtidas; let final;let media_final;
+
+    function média(){
+    nome = prompt("Qual é o nome do aluno?");
+    nota1 = Number(prompt("informe a Primeira nota de " + nome ));
+    nota2 = Number(prompt("qual a segunda nota?"));
+    final = (nota1 + nota2)/2;
+
+    name= document.querySelector(".nome");
+    name.innerHTML=` Calculando a nota final de <mark>${nome} </mark>`    
+    
+    obtidas= document.querySelector(".obtidas")
+    obtidas.innerHTML=`As notas obtidas foram <mark> ${nota1} e ${nota2} </mark>` 
+
+     media_final= document.querySelector(".final")
+     media_final.innerHTML=` A média final é ${final}`
+   
+
+     if(final>6){
+result=document.querySelector(".result")
+result.innerHTML=" PARABÉNS,VOCÊ FOI APROVADO";
+ }else{
+    result.innerHTML="<strong> VOCÊ FOI REPROVADO</strong>";
+
+}
+    }    
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

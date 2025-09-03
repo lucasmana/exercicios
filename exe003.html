@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>conometro</h1>
+
+    <button id="start">aperte para iniciar o conometro</button>
+    <button id="stop">aperte para parar o conometro</button>
+    <button id="reset">aperte para resetar o conometro</button>
+    <p id="timer">00:00:00</p>
+    <script>z
+        let seconds = 0;
+        let interval= null;
+
+        const timerElement = document.getElementById("timer");
+        const startButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+        const resetButton = document.getElementById("reset");
+        function updateTimer(){
+            seconds++;
+            timerElement.textContent = seconds;
+        }
+
+        //iniciar o cronometro
+        startButton.addEventListener('click', () => {
+            if(!interval){
+                interval = setInterval(updateTimer, 1000);
+            }
+        });
+        //parar o cronometro
+        stopButton.addEventListener('click', ()=>{
+                clearInterval(interval);
+                interval = null;
+            });
+            //resetar o cronometro
+        resetButton.addEventListener('click', () => {
+            clearInterval(interval);
+            interval = null;
+            seconds = 0;
+            timerElement.textContent = seconds;
+        });
+        
+    </script>
+</body>
+</html>
